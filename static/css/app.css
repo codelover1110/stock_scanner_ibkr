@@ -1,0 +1,76 @@
+.hero {
+    background: #eee;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 1em;
+    /* height: 300px; */
+    margin-bottom: 50px;
+}
+
+.hero h1 {
+    margin-top: 0;
+    margin-bottom: 0.3em;
+    text-align: center;
+}
+
+
+.chart-container {
+	max-width: 800px;
+	margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+}
+
+
+.trade-table {
+    margin: 1em auto;
+    background-color: #bdc3c754;
+  }
+  
+.trade-title {
+background-color: #3f505c36;
+}
+
+.trade-table td,th {
+padding: 0.2em 1em
+}
+
+
+.ask-detail {
+    background-color: #297fb936;
+  }
+  
+.bid-detail {
+background-color: #dd64644f;
+}
+
+select {
+    font-family: cursive, sans-serif;
+    outline: 0;
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+    padding: 4px;
+    border-radius: 9px;
+  }
+
+.main-container {
+    display: flex;
+    margin: auto;
+    width: 1270px;
+}
+
+.chart-wrap{
+    padding-left: 20px;
+}
+
+.orderbook {
+    position: sticky;
+    top: 67px
+}
+
+/* sticky */

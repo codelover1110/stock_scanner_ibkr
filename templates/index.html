@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Real Time Stock Chart</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.0/dist/chartjs-plugin-zoom.js"></script>
+    <link
+      href="//mincss.com/entireframework.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="{{url_for('static', filename = 'css/app.css')}}" rel="stylesheet">
+  </head>
+  <body>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/app.js') }}"></script>
+
+    <nav class="nav" tabindex="-1" onclick="this.focus()">
+      <div class="container">
+        <a class="pagename current" href="#">Interactive Broker</a>
+        <label for="lang">Ticker</label>
+        <!-- We will put symbol list here. -->
+        <select name="ticker_search" id="ticker_search">
+          <option value="TSLA">TSLA</option>
+          <option value="AAPL">AAPL</option>
+        </select>
+      </div>
+    </nav>
+    <button class="btn-close btn btn-sm">×</button>
+    <div class="main-container">
+      <div class="chart-wrap">
+        <div class="hero orderbook">
+          <h1>Order Book</h1>
+          <div class="chart-container">
+            <table class='trade-table'>
+              <tbody id="orderbook-table">
+                <tr class='trade-title'>
+                  <th>Amount</th>
+                  <th>Bid Price</th>
+                  <th>Ask Price</th>
+                  <th>Amount</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="chart-wrap">
+        <div class="hero">
+          <h1>Stock Price</h1>
+          <div class="chart-container">
+            <canvas id="priceChart" width="1000" height="600"></canvas>
+          </div>
+        </div>
+        <div class="hero">
+          <h1>Stock Volume</h1>
+          <div class="chart-container">
+            <canvas id="volumeChart" width="1000" height="600"></canvas>
+          </div>
+        </div>
+        <!-- <div class="hero">
+          <h1>Histogram</h1>
+          <div class="chart-container">
+            <canvas id="histogramChart" width="1000" height="600"></canvas>
+          </div>
+        </div> -->
+        <div class="hero">
+          <h1>VWAP</h1>
+          <div class="chart-container">
+            <canvas id="vwapChart" width="1000" height="600"></canvas>
+          </div>
+        </div>
+        <div class="hero">
+          <h1>Histogram</h1>
+          <div class="chart-container">
+            <canvas id="histogramChartV2" width="1000" height="600"></canvas>
+          </div>
+        </div>
+ 
+      </div>
+    </div>
+  </body>
+</html>
